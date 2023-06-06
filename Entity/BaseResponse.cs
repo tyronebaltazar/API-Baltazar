@@ -10,6 +10,5 @@ namespace Entity
     {
         public string CodigoRespuesta { get; set; }
         public string NombreRespuesta { get; set; }
-
     }
 }
