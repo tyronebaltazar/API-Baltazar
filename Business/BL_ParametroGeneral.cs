@@ -19,5 +19,19 @@ namespace Business
             return ServiceParametroGeneral.ConsultarParametroGeneral();
         }
 
+        public ParametroGeneralResponse CrearParametroGeneral(ParametroGeneralCrearRequest req)
+        {
+            return ServiceParametroGeneral.CrearParametroGeneral(req);
+        }
+
+        public ParametroGeneralResponse ActualizarParametroGeneral(ParametroGeneralActualizaRequest req)
+        {
+            return ServiceParametroGeneral.ActualizarParametroGeneral(req);
+        }
+
+        public ParametroGeneralResponse EliminarParametroGeneral(string id)
+        {
+            return ServiceParametroGeneral.EliminarParametroGeneral(id);
+        }
     }
 }

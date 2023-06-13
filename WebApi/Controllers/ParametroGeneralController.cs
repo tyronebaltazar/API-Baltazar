@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 
 using Business;
+using Entity.Dto.Request.ParametroGeneralRequest;
 using Entity.Dto.Response.ParametroGeneralResponse;
 
 namespace WebApi.Controllers
@@ -18,6 +19,21 @@ namespace WebApi.Controllers
         public ParametroGeneralResponse Get()
         {
             return BL_ParametroGeneral.ConsultarParametroGeneral();
+        }
+
+        public ParametroGeneralResponse Post(ParametroGeneralCrearRequest req)
+        {
+            return BL_ParametroGeneral.CrearParametroGeneral(req);
+        }
+
+        public ParametroGeneralResponse Put(ParametroGeneralActualizaRequest req)
+        {
+            return BL_ParametroGeneral.ActualizarParametroGeneral(req);
+        }
+
+        public ParametroGeneralResponse Delete(string id)
+        {
+            return BL_ParametroGeneral.EliminarParametroGeneral(id);
         }
     }
 }
