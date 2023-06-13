@@ -123,7 +123,6 @@ namespace Data
                         response.NombreRespuesta = Responses.SUCCESS_MESSAGE;
                         response.ParametrosGenerales = lstParametroGeneral;
                     }
-
                     return response;
                 }
             }
