@@ -56,6 +56,7 @@ namespace Data
                             parametroGeneral.codigo_parametro_decimal_2 = Convert.ToDecimal(dr["CODIGO_PARAMETRO_DECIMAL_2"]);
                             lstParametroGeneral.Add(parametroGeneral);
                         }
+                        
                         response.CodigoRespuesta = Responses.SUCCESS_CODE;
                         response.NombreRespuesta = Responses.SUCCESS_MESSAGE;
                         response.ParametrosGenerales = lstParametroGeneral;
