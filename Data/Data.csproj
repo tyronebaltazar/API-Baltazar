@@ -49,6 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceCategoria.cs" />
     <Compile Include="ServiceParametroGeneral.cs" />
+    <Compile Include="ServiceProducto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj">
