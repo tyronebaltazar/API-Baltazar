@@ -43,14 +43,17 @@ namespace Data
                         while (dr.Read())
                         {
                             Producto Producto = new Producto();
-                            Producto.C_PRODUCTO	 = dr["C_PRODUCTO"].ToString();
+                            Producto.C_PRODUCTO = dr["C_PRODUCTO"].ToString();
                             Producto.C_CATEGORIA = dr["C_CATEGORIA"].ToString();
+                            Producto.CATEGORIA = dr["CATEGORIA"].ToString();
                             Producto.NOMBRE_PRODUCTO = dr["NOMBRE_PRODUCTO"].ToString();
                             Producto.TIPO_UNIDAD = dr["TIPO_UNIDAD"].ToString();
                             Producto.C_UNIDAD_PRIN = dr["C_UNIDAD_PRIN"].ToString();
+                            Producto.UNIDAD_PRIN = dr["UNIDAD_PRIN"].ToString();
                             Producto.C_UNIDAD_AUX = dr["C_UNIDAD_AUX"].ToString();
-                            Producto.FACTOR  = Convert.ToDecimal(dr["FACTOR"]);
-                            Producto.ESTADO  = dr["ESTADO"].ToString();
+                            Producto.UNIDAD_AUX = dr["UNIDAD_AUX"].ToString();
+                            Producto.FACTOR = Convert.ToDecimal(dr["FACTOR"]);
+                            Producto.ESTADO = dr["ESTADO"].ToString();
                             Producto.IND_ESTADO = dr["IND_ESTADO"].ToString();
                             Lsproducto.Add(Producto);
                         }
@@ -89,9 +92,8 @@ namespace Data
                     cmd.Parameters.AddWithValue("@C_UNIDAD_PRIN", request.C_UNIDAD_PRIN);
                     cmd.Parameters.AddWithValue("@C_UNIDAD_AUX", request.C_UNIDAD_AUX);
                     cmd.Parameters.AddWithValue("@FACTOR", request.FACTOR);
-                    cmd.Parameters.AddWithValue("@ESTADO", request.ESTADO);
                     cmd.Parameters.AddWithValue("@IND_ESTADO", request.IND_ESTADO);
-                    
+
 
                     // Indicamos al sqlcommand que ejecutaré un store procedure
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -108,13 +110,17 @@ namespace Data
                             Producto Producto = new Producto();
                             Producto.C_PRODUCTO = dr["C_PRODUCTO"].ToString();
                             Producto.C_CATEGORIA = dr["C_CATEGORIA"].ToString();
-                            Producto.NOMBRE_PRODUCTO     = dr["NOMBRE_PRODUCTO"].ToString();
+                            Producto.CATEGORIA = dr["CATEGORIA"].ToString();
+                            Producto.NOMBRE_PRODUCTO = dr["NOMBRE_PRODUCTO"].ToString();
+                            Producto.TIPO_UNIDAD = dr["TIPO_UNIDAD"].ToString();
                             Producto.C_UNIDAD_PRIN = dr["C_UNIDAD_PRIN"].ToString();
+                            Producto.UNIDAD_PRIN = dr["UNIDAD_PRIN"].ToString();
                             Producto.C_UNIDAD_AUX = dr["C_UNIDAD_AUX"].ToString();
+                            Producto.UNIDAD_AUX = dr["UNIDAD_AUX"].ToString();
                             Producto.FACTOR = Convert.ToDecimal(dr["FACTOR"]);
                             Producto.ESTADO = dr["ESTADO"].ToString();
                             Producto.IND_ESTADO = dr["IND_ESTADO"].ToString();
-                                                                      
+
                             Lsproducto.Add(Producto);
                         }
                         response.CodigoRespuesta = Responses.SUCCESS_CODE;
@@ -131,7 +137,6 @@ namespace Data
                 return response;
             }
         }
-
         public ProductoResponse ActualizarProducto(ProductoActualizaRequest request)
         {
             ProductoResponse response = new ProductoResponse();
@@ -153,7 +158,6 @@ namespace Data
                     cmd.Parameters.AddWithValue("@C_UNIDAD_PRIN", request.C_UNIDAD_PRIN);
                     cmd.Parameters.AddWithValue("@C_UNIDAD_AUX", request.C_UNIDAD_AUX);
                     cmd.Parameters.AddWithValue("@FACTOR", request.FACTOR);
-                    cmd.Parameters.AddWithValue("@ESTADO", request.ESTADO);
                     cmd.Parameters.AddWithValue("@IND_ESTADO", request.IND_ESTADO);
                     // Indicamos al sqlcommand que ejecutaré un store procedure
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -170,9 +174,13 @@ namespace Data
                             Producto Producto = new Producto();
                             Producto.C_PRODUCTO = dr["C_PRODUCTO"].ToString();
                             Producto.C_CATEGORIA = dr["C_CATEGORIA"].ToString();
+                            Producto.CATEGORIA = dr["CATEGORIA"].ToString();
                             Producto.NOMBRE_PRODUCTO = dr["NOMBRE_PRODUCTO"].ToString();
+                            Producto.TIPO_UNIDAD = dr["TIPO_UNIDAD"].ToString();
                             Producto.C_UNIDAD_PRIN = dr["C_UNIDAD_PRIN"].ToString();
+                            Producto.UNIDAD_PRIN = dr["UNIDAD_PRIN"].ToString();
                             Producto.C_UNIDAD_AUX = dr["C_UNIDAD_AUX"].ToString();
+                            Producto.UNIDAD_AUX = dr["UNIDAD_AUX"].ToString();
                             Producto.FACTOR = Convert.ToDecimal(dr["FACTOR"]);
                             Producto.ESTADO = dr["ESTADO"].ToString();
                             Producto.IND_ESTADO = dr["IND_ESTADO"].ToString();
@@ -193,7 +201,6 @@ namespace Data
                 return response;
             }
         }
-
         public ProductoResponse EliminarProducto(string id)
         {
             ProductoResponse response = new ProductoResponse();
@@ -225,14 +232,18 @@ namespace Data
                             Producto Producto = new Producto();
                             Producto.C_PRODUCTO = dr["C_PRODUCTO"].ToString();
                             Producto.C_CATEGORIA = dr["C_CATEGORIA"].ToString();
+                            Producto.CATEGORIA = dr["CATEGORIA"].ToString();
                             Producto.NOMBRE_PRODUCTO = dr["NOMBRE_PRODUCTO"].ToString();
+                            Producto.TIPO_UNIDAD = dr["TIPO_UNIDAD"].ToString();
                             Producto.C_UNIDAD_PRIN = dr["C_UNIDAD_PRIN"].ToString();
+                            Producto.UNIDAD_PRIN = dr["UNIDAD_PRIN"].ToString();
                             Producto.C_UNIDAD_AUX = dr["C_UNIDAD_AUX"].ToString();
+                            Producto.UNIDAD_AUX = dr["UNIDAD_AUX"].ToString();
                             Producto.FACTOR = Convert.ToDecimal(dr["FACTOR"]);
                             Producto.ESTADO = dr["ESTADO"].ToString();
                             Producto.IND_ESTADO = dr["IND_ESTADO"].ToString();
                             Lsproducto.Add(Producto);
-                            
+
                         }
                         response.CodigoRespuesta = Responses.SUCCESS_CODE;
                         response.NombreRespuesta = Responses.SUCCESS_MESSAGE;
