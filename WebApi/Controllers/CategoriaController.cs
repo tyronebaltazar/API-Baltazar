@@ -5,12 +5,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+using System.Web.Http.Cors;
 using Entity.Dto.Response.CategoriaResponse;
 using Business;
 using Entity.Dto.Request.CategoriaRequest;
 
 namespace WebApi.Controllers
 {
+    [EnableCors("*", "*", "*", "*")]
     public class CategoriaController : ApiController
     {
         BL_Categoria BL_Categoria = new BL_Categoria();

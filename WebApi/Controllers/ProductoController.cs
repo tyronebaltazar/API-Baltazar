@@ -4,13 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using System.Web.Http.Cors;
 using Business;
 using Entity.Dto.Request.ProductoRequest;
 using Entity.Dto.Response.ProductoResponse;
 
 namespace WebApi.Controllers
 {
+    [EnableCors("*", "*", "*", "*")]
     public class ProductoController : ApiController
     {
         

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using System.Web.Http.Cors;
 using Business;
 using Entity.Dto.Request.ParametroGeneralRequest;
 using Entity.Dto.Response.ParametroGeneralResponse;
 
 namespace WebApi.Controllers
 {
+    [EnableCors("*", "*", "*", "*")]
     public class ParametroGeneralController : ApiController
     {
         BL_ParametroGeneral BL_ParametroGeneral = new BL_ParametroGeneral();
